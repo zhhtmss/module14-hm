@@ -41,27 +41,27 @@ void Fraction::input() {
     reduce();
 }
 
-void Fraction::print() const {
+void Fraction::print(){
     std::cout << numerator << "/" << denominator << std::endl;
 }
 
-Fraction Fraction::add(const Fraction& other) const {
+Fraction Fraction::add(const Fraction& other){
     int num = numerator * other.denominator + other.numerator * denominator;
     int denom = denominator * other.denominator;
     return Fraction(num, denom);
 }
 
-Fraction Fraction::subtract(const Fraction& other) const {
+Fraction Fraction::subtract(const Fraction& other){
     int num = numerator * other.denominator - other.numerator * denominator;
     int denom = denominator * other.denominator;
     return Fraction(num, denom);
 }
 
-Fraction Fraction::multiply(const Fraction& other) const {
+Fraction Fraction::multiply(const Fraction& other){
     return Fraction(numerator * other.numerator, denominator * other.denominator);
 }
 
-Fraction Fraction::divide(const Fraction& other) const {
+Fraction Fraction::divide(const Fraction& other){
     if (other.numerator == 0) {
         std::cerr << "Error: Division by zero fraction.\n";
         return Fraction(0, 1);
